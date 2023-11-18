@@ -26,3 +26,9 @@ public:
             return -1;
     }
 };
+
+int main(){
+    Solution s;
+    vector<int> v = {2,3,4,5,5};
+    cout<<s.arraySign(v);
+}
