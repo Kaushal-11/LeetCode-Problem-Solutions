@@ -1,27 +1,30 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void reverse(string &s , int start , int end){
-    // Base Case
-    if(start >= end){
-        return;
-    }
+class Solution {
+    void reverse(vector<char> &s , int start , int end){
+        if(start >= end)
+            return;
 
-    // one case solve
-    if(start != end){
-        swap(s[start], s[end]);
-    }
+        if(start != end)
+            swap(s[start], s[end]);
 
-    reverse(s, start + 1 , end - 1);
-}
+        reverse(s, start + 1 , end - 1);
+    }
+public:
+    void reverseString(vector<char>& s) {
+        int start = 0;
+        int end = s.size() - 1;
+        reverse(s, start, end);
+    }
+};
+
 int main() {
-    string s;
-    cin>>s;
-
-    int start = 0;
-    int end = s.size() - 1;
-
-    reverse(s, start , end);
-    cout<<s;
+    Solution s;
+    vector<char> v = {'h','e','l','l','o'};
+    s.reverseString(v);
+    for(auto x : v){
+        cout<<x<<" ";
+    }
 return 0;
 }
